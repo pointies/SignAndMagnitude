@@ -56,6 +56,9 @@ void intToBinary(char *input, char *SignAndMag, int isNegative) {
         bin[i] = integer % 2;
         integer /= 2;
     }
+
+    if(bin[3] == '\0')
+        bin[3] = 0;
     
     SignAndMag[0] = isNegative ? 1 : 0;
     for (i = i - 1; i >= 0; i--)
@@ -66,7 +69,6 @@ void intToBinary(char *input, char *SignAndMag, int isNegative) {
 int main() {
     char input[100], SignAndMag[100];
     
-    printf("pim si: ");
     scanf("%s", input);
     int isNegative = 0;
     intToBinary(input, SignAndMag, isNegative);
