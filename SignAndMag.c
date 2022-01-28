@@ -2,7 +2,7 @@
  
 int StrToInt(char str[], int *isNegative)
 {
-     int integer = 0, i = 0, j = 1;
+     int integer = 0, i = 0;
      /* for(i=0; input[i] != '\0'; i++)
           length++; */
 
@@ -10,13 +10,11 @@ int StrToInt(char str[], int *isNegative)
           *isNegative = 1;   
 
      if(str[0] == '-' || str[0] == '+')
+          i = 1;
+
+     while(str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
      {
-          i++;
-          while(str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
-          {
-               integer = (integer * 10) + (str[i] - '0');
-               i++;
-          }
+          integer = (integer * 10) + (str[i++] - '0');
      }
           
      return integer;
