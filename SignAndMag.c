@@ -17,9 +17,8 @@ int StrToInt(char str[], int *isNegative) {
     if (str[0] == '-' || str[0] == '+')
         i = 1;
     
-    while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9') {
+    while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
         integer = (integer * 10) + (str[i++] - '0');
-    }
     
     return integer;
 }
