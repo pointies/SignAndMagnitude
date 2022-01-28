@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+void padding(int *binary) {
+
+  for (int i = 0; i < 4; i++) {
+    binary[i] = 0;
+  }
+}
+
 int StrToInt(char str[], int *isNegative) {
     int integer = 0, i = 0;
     *isNegative = 0;
@@ -19,7 +26,7 @@ int StrToInt(char str[], int *isNegative) {
 void print_array(int *binary, int bit) {
     
     for (int i = 0; i < bit; i++) {
-        printf("%d", binary[i]);
+        printf(",%d:%d,", i, binary[i]);
     }
     printf("\n");
 }
@@ -38,7 +45,6 @@ void StrConcat(char *str1, char str2[], char *result) {
         result[j++] = str1[i++];
     }
     
-    // Insert the second string in the new string
     i = 0;
     while (str2[i] != '\0') {
         result[j] = str2[i];
@@ -49,19 +55,24 @@ void StrConcat(char *str1, char str2[], char *result) {
 }
 
 void intToBinary(char *input, char *SignAndMag, int isNegative) {
-    int integer = 0, i = 0, j = 1;
-    int bin[100];
+    int integer = 0, i = 0, j = 0;
+    int bin[4];
+    padding(bin);
+    print_array(bin, 4);
+
     integer = StrToInt(input, &isNegative);
     for (i = 0; integer > 0; i++) {
         bin[i] = integer % 2;
         integer /= 2;
     }
-
-    if(bin[2] != 0 || bin[2] != 1)
+/*   if(!(bin[2] == 0 || bin[2] == 1)) {
         bin[2] = 0;
+        i++;
+    } 
+*/
     
-    SignAndMag[0] = isNegative ? 1 : 0;
-    for (i = i - 1; i >= 0; i--)
+    bin[3] = isNegative ? 1 : 0;
+    for (i = 3; i >= 0; i--)
         SignAndMag[j++] = bin[i];
     print_array_char(SignAndMag, j);
 }
