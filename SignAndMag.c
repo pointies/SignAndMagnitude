@@ -57,8 +57,8 @@ void intToBinary(char *input, char *SignAndMag, int isNegative) {
         integer /= 2;
     }
 
-    if(bin[3] == '\0')
-        bin[3] = 0;
+    if(bin[2] != 0 || bin[2] != 1)
+        bin[2] = 0;
     
     SignAndMag[0] = isNegative ? 1 : 0;
     for (i = i - 1; i >= 0; i--)
