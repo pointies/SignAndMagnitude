@@ -22,7 +22,7 @@ int StrToInt(char str[], int *isNegative) {
     
     return integer;
 }
-
+/* 
 void print_array(int *binary, int bit) {
     
     for (int i = 0; i < bit; i++) {
@@ -30,7 +30,7 @@ void print_array(int *binary, int bit) {
     }
     printf("\n");
 }
-
+*/
 void print_array_char(char *binary, int bit) {
     
     for (int i = 0; i < bit; i++) {
@@ -59,7 +59,7 @@ void intToBinary(char *input, char *SignAndMag, int isNegative) {
     int bin[4];
     padding(bin);
     integer = StrToInt(input, &isNegative);
-    
+
     for (i = 0; integer > 0; i++) {
         bin[i] = integer % 2;
         integer /= 2;
