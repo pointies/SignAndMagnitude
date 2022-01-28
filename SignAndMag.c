@@ -1,18 +1,16 @@
 #include <stdio.h>
 
 void padding(int *binary) {
-  for (int i = 0; i < 4; i++) {
-    binary[i] = 0;
-  }
+    for (int i = 0; i < 4; i++)
+        binary[i] = 0;
 }
 
 int StrToInt(char str[], int *isNegative) {
     int integer = 0, i = 0;
     *isNegative = 0;
     
-    if (str[0] == '-') {
+    if (str[0] == '-')
         *isNegative = 1;
-    }
 
     if (str[0] == '-' || str[0] == '+')
         i = 1;
@@ -31,7 +29,7 @@ void print_array(int *binary, int bit) {
     printf("\n");
 }
 */
-void print_array_char(char *binary, int bit) {
+void printArray(char *binary, int bit) {
     for (int i = 0; i < bit; i++) {
         printf("%d", binary[i]);
     }
@@ -67,14 +65,15 @@ void intToBinary(char *input, char *SignAndMag, int isNegative) {
     bin[3] = isNegative ? 1 : 0;
     for (i = 3; i >= 0; i--)
         SignAndMag[j++] = bin[i];
-    print_array_char(SignAndMag, j);
+    printArray(SignAndMag, j);
 }
 
 int main() {
     char input[100], SignAndMag[100];
+    int isNegative = 0;
     
     scanf("%s", input);
-    int isNegative = 0;
+    
     intToBinary(input, SignAndMag, isNegative);
     return 0;
 }
