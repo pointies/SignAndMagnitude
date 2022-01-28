@@ -66,7 +66,7 @@ void intToBinary(char *input, char *SignAndMag) {
 
 int main() {
      char input[100], SignAndMag[100];
-     scanf("%[^\n]s", input);
+     scanf("%s", input);
      intToBinary(input, SignAndMag);
      return 0;
 }
