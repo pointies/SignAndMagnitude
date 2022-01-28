@@ -65,15 +65,10 @@ void intToBinary(char *input, char *SignAndMag, int isNegative) {
 
 int main() {
     char input[100], SignAndMag[100];
-    // char input[1000], binary[1000] = "";
+    
     printf("pim si: ");
-    scanf("%[^\n]s", input);
+    scanf("%s", input);
     int isNegative = 0;
     intToBinary(input, SignAndMag, isNegative);
-    /*
-     printf("Sign and Magnitude: ");
-     for (int i = 0; SignAndMag[i] != '\0'; i++)
-     printf("%c", SignAndMag[i]);
-     */
     return 0;
 }
