@@ -19,7 +19,7 @@ int StrToInt(char str[], int *isNegative) {
 void print_array(int *binary, int bit) {
     
     for (int i = 0; i < bit; i++) {
-        printf("%d", binary[i]);
+        printf(",%d:%d,", i, binary[i]);
     }
     printf("\n");
 }
@@ -56,9 +56,10 @@ void intToBinary(char *input, char *SignAndMag, int isNegative) {
         bin[i] = integer % 2;
         integer /= 2;
     }
-
-    if(bin[3] == '\0')
-        bin[3] = 0;
+    if(!(bin[2] == 0 || bin[2] == 1)) {
+        bin[2] = 0;
+        i++;
+    }
     
     SignAndMag[0] = isNegative ? 1 : 0;
     for (i = i - 1; i >= 0; i--)
