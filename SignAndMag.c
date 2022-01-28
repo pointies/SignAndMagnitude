@@ -58,18 +58,12 @@ void intToBinary(char *input, char *SignAndMag, int isNegative) {
     int integer = 0, i = 0, j = 0;
     int bin[4];
     padding(bin);
-    print_array(bin, 4);
-
     integer = StrToInt(input, &isNegative);
+    
     for (i = 0; integer > 0; i++) {
         bin[i] = integer % 2;
         integer /= 2;
     }
-/*   if(!(bin[2] == 0 || bin[2] == 1)) {
-        bin[2] = 0;
-        i++;
-    } 
-*/
     
     bin[3] = isNegative ? 1 : 0;
     for (i = 3; i >= 0; i--)
