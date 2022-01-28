@@ -30,10 +30,11 @@ void print_array(int *binary, int bit) {
 }
 */
 void printArray(char *binary, int bit) {
+    printf("Sign and Magnitude: ");
     for (int i = 0; i < bit; i++) {
         printf("%d", binary[i]);
     }
-    printf("\n");
+    printf("\n\n");
 }
 /* 
 void StrConcat(char *str1, char str2[], char *result) {
@@ -71,7 +72,8 @@ void intToBinary(char *input, char *SignAndMag, int isNegative) {
 int main() {
     char input[100], SignAndMag[100];
     int isNegative = 0;
-    
+
+    printf("\n\nEnter number: ");
     scanf("%s", input);
     
     intToBinary(input, SignAndMag, isNegative);
